@@ -39,7 +39,7 @@ public class MoveAndShoot : MonoBehaviour
         // ranged attack
         if (shotDelay <= 0)
         {
-            Instantiate(projectile, transform.position, Quaternion.identity);// fire projectile
+            _ = Instantiate(projectile, transform.position, Quaternion.identity);// fire projectile
             shotDelay = startDelay;
         }
         else
