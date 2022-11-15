@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8523939714445547678}
   - component: {fileID: 8523939714445547676}
   - component: {fileID: 8523939714445547675}
+  - component: {fileID: 793942564420109668}
   m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
@@ -165,3 +166,18 @@ MonoBehaviour:
   retreatDistance: 3
   startDelay: 3
   projectile: {fileID: 9137229049826423653, guid: 10841373da41749248576bac3eaca545, type: 3}
+--- !u!114 &793942564420109668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8523939714445547650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5a9e05a1a9848259752b4e0f15937a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  currentHealth: 3
+  deathDelay: 0.5

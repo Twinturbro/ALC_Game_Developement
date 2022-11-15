@@ -11,7 +11,6 @@ public class PlayerAttack : MonoBehaviour
     public float attackRange;
     public int damage;
 
-
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +24,6 @@ public class PlayerAttack : MonoBehaviour
                 {
                     enemiesToDamage[i].GetComponent<EnemyHealth>().TakeDamage(damage);
                 }
-
                 attackDelay = startDelay;
             }
         }
