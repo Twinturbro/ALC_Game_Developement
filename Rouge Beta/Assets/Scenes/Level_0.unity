@@ -21913,8 +21913,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
-  currentHealth: 3
-  deathDelay: 0
+  currentHealth: 0
+  deathDelay: 0.3
 --- !u!114 &1803871148
 MonoBehaviour:
   m_ObjectHideFlags: 0
