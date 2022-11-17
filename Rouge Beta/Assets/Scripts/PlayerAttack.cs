@@ -32,8 +32,7 @@ public class PlayerAttack : MonoBehaviour
             attackDelay -= Time.deltaTime;
         }
     }
-
-    void OnDrawGizmosSelected()
+    private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position, attackRange);
