@@ -32,7 +32,7 @@ public class Health : MonoBehaviour
            // Destroy(gameObject, deathDelay);
         }
     }
-    public void addHealth(int healAmount)
+    public void AddHealth(int healAmount)
     {
         currentHealth += healAmount;
 
