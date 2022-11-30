@@ -21,7 +21,8 @@ public class FPSController : MonoBehaviour
         //get components
         camera = Camera.main;
         rb = GetComponent<Rigidbody>();
-
+        //Freeze and disable cusor
+        Cursor.lockState = CursorLockMode.Locked;
     }
     // Start is called before the first frame update
     void Start()
@@ -33,18 +34,40 @@ public class FPSController : MonoBehaviour
     void Update()
     {
         PlayerMove();
+        CameraLook();
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            PlayerJump();
+        }
     }
     void PlayerMove()
     {
         float x = Input.GetAxis("Horizontal") * moveSpeed;
         float z = Input.GetAxis("Vertical") * moveSpeed;
+        //moveSpeed layer in realatoon to the camera direction
+        Vector3 dir = transform.right * x + transform.forward * z;
+        dir.y = rb.velocity.y;
 
-        rb.velocity = new Vector3(x, rb.velocity.y, z);
+        rb.velocity = dir;
     }
     void CameraLook()
     {
-        float y = Input.GetAxid("Mouse X") * lookSensitivity;
-        rotx += Input.GetAxis("mouse Y") * lookSensitivity;
+        float y = Input.GetAxis("Mouse X") * lookSensitivity;
+        rotx += Input.GetAxis("Mouse Y") * lookSensitivity;
+
+        rotx = Mathf.Clamp(rotx, minLookx, maxLookx);// clamp verticle rotation of hte player so player dosent do front flips and stuff
+        // applies rotation to player
+        camera.transform.localRotation = Quaternion.Euler(-rotx, 0, 0);
+        transform.eulerAngles += Vector3.up * y;
+    }
+    void PlayerJump()
+    {
+        //ray cast for ground detection
+        Ray ray = new Ray(transform.position, Vector3.down);
+
+        if(Physics.Raycast(ray, 1.1f))
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
 
     }
 }
