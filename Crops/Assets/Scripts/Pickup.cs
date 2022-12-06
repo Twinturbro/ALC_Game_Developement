@@ -16,7 +16,7 @@ public class Pickup : MonoBehaviour
     public int ammoAmount;
 
     [Header("Bobing Anim")]
-    public float totationSpeed;
+    public float rotationSpeed;
     public float bobSpeed;
     public float bobHeight;
 
@@ -56,7 +56,7 @@ public class Pickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Vector3.up, totationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
 
         Vector3 offset = (bobbingUp == true ? new Vector3(0,bobHeight / 2, 0) : new Vector3(0, -bobHeight / 2, 0));
         transform.position = Vector3.MoveTowards(transform.position, startPos + offset, bobSpeed * Time.deltaTime);
