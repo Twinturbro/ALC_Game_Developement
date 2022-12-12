@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HomeBase : MonoBehaviour
 {
+    private GameObject flag;
     private GameManager gm;
     private Renderer flagRend;
 
