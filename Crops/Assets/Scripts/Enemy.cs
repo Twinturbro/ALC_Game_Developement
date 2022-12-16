@@ -47,7 +47,9 @@ public class Enemy : MonoBehaviour
     void ChaseTarget()
     {
         if (path.Count == 0)
+        {
             return;
+        }
         // Move towards the closest path
         transform.position = Vector3.MoveTowards(transform.position, path[0] + new Vector3(0, yPathOffset, 0), moveSpeed * Time.deltaTime);
 
