@@ -15,7 +15,7 @@ public class Enemy : MonoBehaviour
 
     [Header("Movement")]
     public float moveSpeed;
-    public float atteckRange;
+    public float attackRange;
 
     [Header("Path Info")]
     public float yPathOffset;
