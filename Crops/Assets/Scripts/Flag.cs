@@ -11,13 +11,13 @@ public class Flag : MonoBehaviour
     void Start()
     {
         gm = GameObject.Find("GameManager").GetComponent<GameManager>();
-        rend = GetComponent<Renderer> ();
+        rend = GetComponent<Renderer>();
         rend.enabled = true;
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (other.CompareTag("Player"))
         {
             gm.hasFlag = true;
             Debug.Log("You have captured the flag!");

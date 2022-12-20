@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Updatepath()
+    void UpdatePath()
     {
         // CAlculate a path to the target
         NavMeshPath navMeshPath = new NavMeshPath();

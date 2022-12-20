@@ -15,14 +15,13 @@ public class Pickup : MonoBehaviour
     public int healthAmount;
     public int ammoAmount;
 
-    [Header("Bobing Anim")]
+    [Header("Bobbing Anim")]
     public float rotationSpeed;
     public float bobSpeed;
     public float bobHeight;
 
     private Vector3 startPos;
     private bool bobbingUp;
-    private bool bobbingup;
 
     //public Audioclip pickupSfx;
 
@@ -41,7 +40,7 @@ public class Pickup : MonoBehaviour
             {
                 case PickupType.Health:
                     Player.GiveHealth(healthAmount);
-                        break;
+                    break;
 
                 case PickupType.Ammo:
                     Player.GiveAmmo(ammoAmount);
@@ -62,6 +61,6 @@ public class Pickup : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, startPos + offset, bobSpeed * Time.deltaTime);
 
         if (transform.position == startPos + offset)
-            bobbingup = !bobbingUp;
+            bobbingUp = !bobbingUp;
     }
 }
